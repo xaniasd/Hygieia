@@ -121,7 +121,7 @@
             commits = [];
             groupedCommitData = [];
             // get total commits by day
-            var groups = _(data).sortBy('timestamp')
+            var groups = _.chain(data).sortBy('timestamp')
                 .groupBy(function (item) {
                     return -1 * Math.floor(moment.duration(moment().diff(moment(item.scmCommitTimestamp))).asDays());
                 }).value();
@@ -226,7 +226,7 @@
             pulls = [];
             groupedpullData = [];
             // get total pulls by day
-            var groups = _(data).sortBy('timestamp')
+            var groups = _.chain(data).sortBy('timestamp')
                 .groupBy(function(item) {
                     return -1 * Math.floor(moment.duration(moment().diff(moment(item.timestamp))).asDays());
                 }).value();
@@ -330,7 +330,7 @@
             groupedissueData = [];
             issues = [];
             // get total issues by day
-            var groups = _(data).sortBy('timestamp')
+            var groups = _.chain(data).sortBy('timestamp')
                 .groupBy(function(item) {
                     return -1 * Math.floor(moment.duration(moment().diff(moment(item.timestamp))).asDays());
                 }).value();
